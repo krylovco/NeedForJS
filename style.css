@@ -49,10 +49,50 @@ table {
 .car, .enemy {
   width: 50px;
   height: 100px;
-  background: transparent url('./images/player_toyota.png') center /cover no-repeat;
+  background: transparent url('./images/driver.png') center /cover no-repeat;
   position: absolute;
   left: 125px;
   bottom: 10px;
+}
+
+.enemy1 {
+	background: transparent url('./images/enemy1.png') center /cover no-repeat !important;
+}
+
+.enemy2 {
+	background: transparent url('./images/enemy2.png') center /cover no-repeat !important;
+}
+
+.enemy3 {
+	background: transparent url('./images/enemy3.png') center /cover no-repeat !important;
+}
+
+.enemy4 {
+	background: transparent url('./images/enemy4.png') center /cover no-repeat !important;
+}
+
+.enemy5 {
+	background: transparent url('./images/enemy5.png') center /cover no-repeat !important;
+}
+
+.enemy6 {
+	background: transparent url('./images/enemy6.png') center /cover no-repeat !important;
+}
+
+.enemy7 {
+	background: transparent url('./images/enemy7.png') center /cover no-repeat !important;
+}
+
+.enemy8 {
+	background: transparent url('./images/enemy8.png') center /cover no-repeat !important;
+}
+
+.enemy9 {
+	background: transparent url('./images/enemy9.png') center /cover no-repeat !important;
+}
+
+.enemy10 {
+	background: transparent url('./images/enemy10.png') center /cover no-repeat !important;
 }
 
 

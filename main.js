@@ -45,11 +45,13 @@ function startGame() {
     enemy.y = -100 * setting.traffic * (i+1);
     enemy.style.left = Math.floor(Math.random() * (gameArea.offsetWidth - 50)) + 'px';
     enemy.style.top = enemy.y + 'px';
-    enemy.style.background = 'transparent url(./images/enemy2.png) center /cover no-repeat';
+    let enemyNumer = Math.floor(Math.random()*10);
+    enemy.classList.add('enemy'+enemyNumer);
     gameArea.appendChild(enemy);
   }
 
   setting.score = 0;
+  setting.speed = 3;
   setting.start = true;
   gameArea.appendChild(car);
   car.style.left = gameArea.offsetWidth/2 - car.offsetWidth/2;
@@ -57,12 +59,18 @@ function startGame() {
   setting.x = car.offsetLeft;
   setting.y = car.offsetTop;
   requestAnimationFrame(playGame);
+
 }
 
 function playGame() {
   if (setting.start) {
-    setting.score +=setting.speed;
+    setting.score +=Math.floor(setting.speed);
     score.innerHTML = 'SCORE<br>'+setting.score;
+
+    do {
+    setting.speed +=0.005;
+  } while (setting.speed===15);
+
     moveRoad();
     moveEnemy();
     if (keys.ArrowLeft && setting.x > 0) {
@@ -124,6 +132,9 @@ function moveEnemy() {
       console.warn('ДТП');
       start.classList.remove('hide');
       start.style.top = score.offsetHeight;
+      let audio = new Audio();
+      audio.src = "./audio/crash.wav";
+      audio.autoplay = true;
     }
 
     item.y  += setting.speed / 2;
